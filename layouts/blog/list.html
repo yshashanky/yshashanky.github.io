@@ -1,10 +1,5 @@
 {{- define "main" }}
 <main class="blog-list">
-  <header>
-    <h1>{{ .Title }}</h1>
-    {{- with .Description }}<p>{{ . }}</p>{{ end }}
-  </header>
-
   {{- $pages := .Pages.ByDate.Reverse }}
   {{- $currentYear := 0 }}
 
@@ -29,13 +24,16 @@
 .blog-list {
   max-width: 680px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0.5rem 1rem 2rem;
 }
 .blog-list h2 {
   margin-top: 2.5rem;
   margin-bottom: 0.25rem;
   font-size: 1.1rem;
   font-weight: 600;
+}
+.blog-list h2:first-of-type {
+  margin-top: 0;
 }
 .blog-list hr {
   margin: 0 0 1rem 0;
@@ -53,9 +51,11 @@
 .blog-entry a {
   font-weight: 500;
   text-decoration: none;
+  transition: opacity 0.15s ease;
 }
 .blog-entry a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  opacity: 0.85;
 }
 .blog-meta {
   font-size: 0.875rem;

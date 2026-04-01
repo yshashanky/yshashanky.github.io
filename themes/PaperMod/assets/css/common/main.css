@@ -30,7 +30,14 @@
 
 .social-icons a {
     display: inline-flex;
-    padding: 10px;
+    padding: 5px;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+}
+
+.social-icons a:hover {
+    text-decoration: none;
+    opacity: 0.85;
 }
 
 .social-icons a svg {

@@ -17,6 +17,10 @@ params:
   ShowShareButtons: false
   ShowRelatedPosts: false
 
+  label:
+    text: ""
+    iconSVG: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="20" width="20"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+
   profileMode:
     enabled: true
     title: "Shashank Yadav"
@@ -26,22 +30,20 @@ params:
       building scalable microservices and production systems using Kafka, transactional
       APIs, and database-driven architectures.
     imageUrl: "images/avatar.jpg"
-    imageWidth: 120
-    imageHeight: 120
+    imageWidth: 130
+    imageHeight: 130
     imageTitle: "Shashank Yadav"
-    buttons:
-      - name: Blog
-        url: /blog
-
   socialIcons:
-    - name: github
-      url: "https://github.com/GITHUB_USERNAME"
-    - name: linkedin
-      url: "https://linkedin.com/in/LINKEDIN_USERNAME"
-    - name: email
-      url: "mailto:EMAIL@example.com"
-    - name: cv
+    - name: Resume
       url: "/resume.pdf"
+    - name: GitHub
+      url: "https://github.com/GITHUB_USERNAME"
+    - name: LinkedIn
+      url: "https://linkedin.com/in/LINKEDIN_USERNAME"
+    - name: Email
+      url: "mailto:EMAIL@example.com"
+    - name: Writings
+      url: "/blog"
 
 menu:
   main:
