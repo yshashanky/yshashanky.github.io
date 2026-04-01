@@ -1,0 +1,56 @@
+baseURL: "https://example.com"
+languageCode: "en-us"
+title: "Shashank Yadav"
+theme: "PaperMod"
+paginate: 20
+
+params:
+  env: production
+  author: Shashank Yadav
+  description: "Software Engineer II — Java, Kafka, Microservices"
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowShareButtons: false
+  ShowRelatedPosts: false
+
+  profileMode:
+    enabled: true
+    title: "Shashank Yadav"
+    subtitle: >
+      Java full-stack developer with strong ownership of end-to-end feature delivery,
+      from design and development to production deployment and support. Experienced in
+      building scalable microservices and production systems using Kafka, transactional
+      APIs, and database-driven architectures.
+    imageUrl: "images/avatar.jpg"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: "Shashank Yadav"
+    buttons:
+      - name: Blog
+        url: /blog
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/GITHUB_USERNAME"
+    - name: linkedin
+      url: "https://linkedin.com/in/LINKEDIN_USERNAME"
+    - name: email
+      url: "mailto:EMAIL@example.com"
+    - name: cv
+      url: "/resume.pdf"
+
+menu:
+  main:
+    - name: Blog
+      url: /blog/
+      weight: 1
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

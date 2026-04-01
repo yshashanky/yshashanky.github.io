@@ -1,0 +1,65 @@
+{{- define "main" }}
+<main class="blog-list">
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+
+  {{- $pages := .Pages.ByDate.Reverse }}
+  {{- $currentYear := 0 }}
+
+  {{- range $pages }}
+    {{- $year := .Date.Year }}
+    {{- if ne $year $currentYear }}
+      {{- if ne $currentYear 0 }}</ul>{{ end }}
+      <h2>{{ $year }}</h2>
+      <hr>
+      <ul class="blog-year-list">
+      {{- $currentYear = $year }}
+    {{- end }}
+      <li class="blog-entry">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+        <span class="blog-meta">{{ .Date.Format "Jan 2006" }}{{ with .Description }} · {{ . }}{{ end }}</span>
+      </li>
+  {{- end }}
+  {{- if ne $currentYear 0 }}</ul>{{ end }}
+</main>
+
+<style>
+.blog-list {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.blog-list h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.blog-list hr {
+  margin: 0 0 1rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+.blog-year-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.blog-entry {
+  margin-bottom: 1.25rem;
+}
+.blog-entry a {
+  font-weight: 500;
+  text-decoration: none;
+}
+.blog-entry a:hover {
+  text-decoration: underline;
+}
+.blog-meta {
+  font-size: 0.875rem;
+  color: var(--secondary);
+}
+</style>
+{{- end }}
