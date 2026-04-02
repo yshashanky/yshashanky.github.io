@@ -29,7 +29,7 @@ params:
       from design and development to production deployment and support. Experienced in
       building scalable microservices and production systems using Kafka, transactional
       APIs, and database-driven architectures.
-    imageUrl: "images/avatar.jpg"
+    imageUrl: "images/avatar.png"
     imageWidth: 130
     imageHeight: 130
     imageTitle: "Shashank Yadav"
