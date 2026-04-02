@@ -1,27 +1,27 @@
-/* Deep Ink palette — light mode */
+/* Option B — Newsprint palette — light mode */
 :root {
-    --theme: #fafaf8;
-    --entry: #fafaf8;
-    --primary: #111111;
-    --secondary: #777777;
-    --tertiary: #e8e8e4;
-    --content: #222222;
-    --border: #e0e0dc;
-    --code-bg: #f0f0ee;
-    --code-block-bg: #1e1e1e;
+    --theme: #f5f0e8;
+    --entry: #f5f0e8;
+    --primary: #2b2117;
+    --secondary: #7a6f63;
+    --tertiary: #e8e2d6;
+    --content: #3a2e22;
+    --border: #ddd8ce;
+    --code-bg: #ede8df;
+    --code-block-bg: #1e1a14;
 }
 
-/* Deep Ink palette — dark mode */
+/* Paper dark mode */
 :root[data-theme="dark"] {
-    --theme: #0f1117;
-    --entry: #161b22;
-    --primary: #e8e8e8;
-    --secondary: #8b8b8b;
-    --tertiary: #21262d;
-    --content: #d0d0d0;
-    --border: #2a2a2a;
-    --code-bg: #161b22;
-    --code-block-bg: #0d1117;
+    --theme: #141414;
+    --entry: #1e1e1e;
+    --primary: #e9e9e9;
+    --secondary: #888888;
+    --tertiary: #252525;
+    --content: #d4d4d4;
+    --border: #2c2c2c;
+    --code-bg: #1e1e1e;
+    --code-block-bg: #111111;
 }
 
 /* fix .list pages (e.g. /blog) to use page bg not code-bg */

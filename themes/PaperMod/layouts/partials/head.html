@@ -168,17 +168,18 @@
 
 </script>
 {{- else }}
-{{- /* theme is auto */}}
+{{- /* theme is auto — always follow browser preference, live updates, no localStorage */}}
 <script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
+    (function() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.querySelector("html").dataset.theme = 'dark';
+        } else {
+            document.querySelector("html").dataset.theme = 'light';
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            document.querySelector("html").dataset.theme = e.matches ? 'dark' : 'light';
+        });
+    })();
 
 </script>
 {{- end }}

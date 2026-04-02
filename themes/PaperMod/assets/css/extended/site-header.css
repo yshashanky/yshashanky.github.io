@@ -82,13 +82,20 @@ body.list .main {
     position: fixed;
     top: 20px;
     right: 24px;
+    z-index: 999;
 }
 
-/* suppress text cursor outside post body */
+/* suppress text cursor and selection outside post body */
 body {
     cursor: default;
+    user-select: none;
+}
+
+a, button {
+    cursor: pointer;
 }
 
 .post-content {
     cursor: auto;
+    user-select: text;
 }
