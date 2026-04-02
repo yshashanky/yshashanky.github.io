@@ -1,0 +1,34 @@
+/* Deep Ink palette — light mode */
+:root {
+    --theme: #fafaf8;
+    --entry: #fafaf8;
+    --primary: #111111;
+    --secondary: #777777;
+    --tertiary: #e8e8e4;
+    --content: #222222;
+    --border: #e0e0dc;
+    --code-bg: #f0f0ee;
+    --code-block-bg: #1e1e1e;
+}
+
+/* Deep Ink palette — dark mode */
+:root[data-theme="dark"] {
+    --theme: #0f1117;
+    --entry: #161b22;
+    --primary: #e8e8e8;
+    --secondary: #8b8b8b;
+    --tertiary: #21262d;
+    --content: #d0d0d0;
+    --border: #2a2a2a;
+    --code-bg: #161b22;
+    --code-block-bg: #0d1117;
+}
+
+/* fix .list pages (e.g. /blog) to use page bg not code-bg */
+.list {
+    background: var(--theme);
+}
+
+[data-theme="dark"] .list {
+    background: var(--theme);
+}
