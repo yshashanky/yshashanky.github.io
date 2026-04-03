@@ -1,4 +1,4 @@
 ---
-title: "Writing"
+title: ""
 description: "Technical writing by Shashank Yadav."
 ---

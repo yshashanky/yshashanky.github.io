@@ -5,8 +5,10 @@
   <ul class="blog-year-list">
   {{- range $pages }}
       <li class="blog-entry">
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
-        <span class="blog-meta">{{ .Date.Format "Jan 2006" }}{{ with .Description }} · {{ . }}{{ end }}</span>
+        <a class="blog-entry-link" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
+          <span class="blog-title">{{ .Title }}</span><br>
+          <span class="blog-meta">{{ .Date.Format "Jan 2006" }}{{ with .Description }} · {{ . }}{{ end }}</span>
+        </a>
       </li>
   {{- end }}
   </ul>
@@ -22,22 +24,53 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 .blog-entry {
-  margin-bottom: 1.25rem;
+  border-radius: 10px;
+  background: transparent;
+  transition: background 0.2s ease;
 }
-.blog-entry a {
-  font-weight: 500;
+.blog-entry:hover {
+  background: var(--entry-hover);
+}
+.blog-entry-link {
+  display: block;
+  padding: 1rem 1.25rem 1.1rem;
   text-decoration: none;
-  transition: opacity 0.15s ease;
 }
-.blog-entry a:hover {
+.blog-entry-link:hover {
   text-decoration: none;
-  opacity: 0.75;
 }
+.blog-title {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #2b2117;
+}
+
+[data-theme="dark"] .blog-title {
+  color: #e9e9e9;
+}
+
 .blog-meta {
   font-size: 0.875rem;
-  color: var(--secondary);
+  color: #6b5a4e;
+}
+
+[data-theme="dark"] .blog-meta {
+  color: #888888;
+}
+
+/* Light mode hover */
+:root {
+  --entry-hover: #e8e2d6;
+}
+
+/* Dark mode hover */
+:root[data-theme="dark"] {
+  --entry-hover: #1e1e1e;
 }
 </style>
 {{- end }}
