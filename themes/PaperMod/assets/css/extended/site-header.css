@@ -15,13 +15,30 @@
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
+    color: #1a1a1a;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    display: inline-block;
+}
+
+[data-theme="dark"] .site-nav-home {
     color: var(--primary);
-    transition: opacity 0.15s ease;
 }
 
 .site-nav-home:hover {
     text-decoration: none;
-    opacity: 0.75;
+    opacity: 0.85;
+    transform: translateY(-2px) scale(1.12);
+}
+
+/* On touch devices, no hover — keep full colour */
+@media (hover: none) {
+    .site-nav-home {
+        color: #1a1a1a;
+    }
+
+    [data-theme="dark"] .site-nav-home {
+        color: var(--primary);
+    }
 }
 
 .site-nav-links {
@@ -33,12 +50,34 @@
 .site-nav-links a {
     font-size: 0.9rem;
     text-decoration: none;
-    color: var(--secondary);
+    color: #4a4a4a;
+    transition: color 0.15s ease, transform 0.15s ease;
+    display: inline-block;
+}
+
+[data-theme="dark"] .site-nav-links a {
+    color: #b0b0b0;
 }
 
 .site-nav-links a:hover {
-    color: var(--primary);
+    color: #111111;
     text-decoration: none;
+    transform: scale(1.08);
+}
+
+[data-theme="dark"] .site-nav-links a:hover {
+    color: #ffffff;
+}
+
+/* On touch devices (no hover), show links in full colour always */
+@media (hover: none) {
+    .site-nav-links a {
+        color: #111111;
+    }
+
+    [data-theme="dark"] .site-nav-links a {
+        color: #ffffff;
+    }
 }
 
 #theme-toggle {
