@@ -1,23 +1,15 @@
 {{- define "main" }}
 <main class="blog-list">
   {{- $pages := .Pages.ByDate.Reverse }}
-  {{- $currentYear := 0 }}
 
+  <ul class="blog-year-list">
   {{- range $pages }}
-    {{- $year := .Date.Year }}
-    {{- if ne $year $currentYear }}
-      {{- if ne $currentYear 0 }}</ul>{{ end }}
-      <h2>{{ $year }}</h2>
-      <hr>
-      <ul class="blog-year-list">
-      {{- $currentYear = $year }}
-    {{- end }}
       <li class="blog-entry">
         <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
         <span class="blog-meta">{{ .Date.Format "Jan 2006" }}{{ with .Description }} · {{ . }}{{ end }}</span>
       </li>
   {{- end }}
-  {{- if ne $currentYear 0 }}</ul>{{ end }}
+  </ul>
 </main>
 
 <style>
@@ -25,20 +17,6 @@
   max-width: 680px;
   margin: 0 auto;
   padding: 0.5rem 1rem 2rem;
-}
-.blog-list h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 0.25rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.blog-list h2:first-of-type {
-  margin-top: 0;
-}
-.blog-list hr {
-  margin: 0 0 1rem 0;
-  border: none;
-  border-top: 1px solid var(--border);
 }
 .blog-year-list {
   list-style: none;

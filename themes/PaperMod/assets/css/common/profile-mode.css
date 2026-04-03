@@ -23,7 +23,8 @@
 
 .profile img {
     border-radius: 16px;
-    border: 1px solid var(--border);
+    border: none;
+    box-shadow: 0 0 0 2px var(--border), 0 6px 24px rgba(0, 0, 0, 0.10);
 }
 
 .profile .profile_inner > span {
