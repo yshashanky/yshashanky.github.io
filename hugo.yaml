@@ -7,7 +7,7 @@ paginate: 20
 params:
   env: production
   author: Shashank Yadav
-  description: "Software Engineer II — Java, Kafka, Microservices"
+  description: "Software Engineer II - Java, Kafka, Microservices"
   defaultTheme: auto
   disableThemeToggle: false
   ShowReadingTime: true
