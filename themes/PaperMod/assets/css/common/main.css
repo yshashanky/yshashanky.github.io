@@ -32,13 +32,18 @@
     display: inline-flex;
     padding: 5px;
     text-decoration: none;
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    transition: opacity 0.15s ease, transform 0.15s ease, filter 0.15s ease;
 }
 
 .social-icons a:hover {
     text-decoration: none;
     opacity: 0.85;
-    transform: scale(1.12);
+    transform: translateY(-2px) scale(1.12);
+    filter: drop-shadow(0 0 7px rgba(120, 80, 30, 0.50));
+}
+
+[data-theme="dark"] .social-icons a:hover {
+    filter: drop-shadow(0 0 8px rgba(200, 200, 200, 0.35));
 }
 
 .social-icons a svg {

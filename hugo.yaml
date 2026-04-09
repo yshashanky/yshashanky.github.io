@@ -3,11 +3,14 @@ languageCode: "en-us"
 title: "Shashank Yadav"
 theme: "PaperMod"
 paginate: 20
+enableRobotsTXT: true
 
 params:
   env: production
   author: Shashank Yadav
   description: "Software Engineer II - Java, Kafka, Microservices"
+  images:
+    - "/images/og-image.png"
   defaultTheme: auto
   disableThemeToggle: false
   ShowReadingTime: true
