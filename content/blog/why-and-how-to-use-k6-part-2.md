@@ -1,5 +1,5 @@
 ---
-title: "Why and how to use k6? - Part 2"
+title: "Why and How to Use It - Part II"
 date: 2024-08-25
 description: "A practical guide to structuring k6 load test projects - covering folder layout, writing main.js with options, setup, and report generation, and building reusable microservice controller files with custom metrics."
 draft: false

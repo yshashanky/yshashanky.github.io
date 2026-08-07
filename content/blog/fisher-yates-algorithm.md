@@ -1,5 +1,5 @@
 ---
-title: "Fisher-Yates algorithm"
+title: "Fisher-Yates Algorithm"
 date: 2024-09-03
 description: "A look at the Fisher-Yates shuffle algorithm, also known as the Knuth shuffle and a simple JavaScript implementation to get a random subset from an array."
 draft: false

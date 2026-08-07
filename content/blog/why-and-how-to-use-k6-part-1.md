@@ -1,5 +1,5 @@
 ---
-title: "Why and how to use k6?"
+title: "Why and How to Use It - Part I"
 date: 2024-08-20
 description: "An introduction to k6 - what it is, its key features, how to export test results as HTML reports, and how to stream live metrics using the xk6-dashboard extension."
 draft: false
