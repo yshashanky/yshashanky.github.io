@@ -11,6 +11,12 @@ params:
   description: "Software Engineer II - Java, Kafka, Microservices"
   images:
     - "/images/og-image.png"
+  
+  assets:
+    favicon: "/images/favicon.png"
+    favicon16x16: "/images/favicon.png"
+    favicon32x32: "/images/favicon.png"
+  
   defaultTheme: auto
   disableThemeToggle: false
   ShowReadingTime: true
@@ -45,15 +51,15 @@ params:
     - name: Writings
       url: "/blog"
   
-  # homeSkillsTitle: "CORE TECHNOLOGIES"
-  # homeSkills:
-  #   - Java
-  #   - Spring Boot
-  #   - Kafka
-  #   - Kafka Streams
-  #   - Microservices
-  #   - SQL
-  #   - Snowflake
+  homeSkillsTitle: "CORE TECHNOLOGIES"
+  homeSkills:
+    - Java
+    - Spring Boot
+    - Kafka
+    - Kafka Streams
+    - Python
+    - SQL
+    - Snowflake
 
 menu:
   main:
