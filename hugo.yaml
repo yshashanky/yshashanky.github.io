@@ -28,7 +28,7 @@ params:
     enabled: true
     title: "Shashank Yadav"
     subtitle: >
-      Senior Java Backend Engineer with 5+ years of experience building scalable microservices, distributed systems, and event-driven applications. I work primarily with Java, Spring Boot, Kafka, and data-intensive systems, with experience taking features from design and development through production. I enjoy solving complex engineering problems and sharing what I learn through writing.
+      Senior Java Backend Engineer with 5+ years of experience building scalable microservices, distributed systems, and event-driven applications. I work primarily with Java, Spring Boot, Kafka, and data-intensive systems, taking features from design and development through production. I enjoy solving complex engineering problems and writing about what I learn along the way.
     imageUrl: "images/avatar.png"
     imageWidth: 130
     imageHeight: 130
@@ -44,6 +44,16 @@ params:
       url: "mailto:shashankyadav.1299@gmail.com"
     - name: Writings
       url: "/blog"
+  
+  # homeSkillsTitle: "CORE TECHNOLOGIES"
+  # homeSkills:
+  #   - Java
+  #   - Spring Boot
+  #   - Kafka
+  #   - Kafka Streams
+  #   - Microservices
+  #   - SQL
+  #   - Snowflake
 
 menu:
   main:

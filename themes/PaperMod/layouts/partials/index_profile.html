@@ -24,15 +24,28 @@
                 {{- end }}
             {{- end }}
             <img draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
-                height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+                height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" class="profile-image" />
         {{- else }}
         <img draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" title="{{ .imageTitle }}"
-            height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" />
+            height="{{ .imageHeight | default 150 }}" width="{{ .imageWidth | default 150 }}" class="profile-image" />
         {{- end }}
         {{- end }}
         <h1>{{ .title | default site.Title | markdownify }}</h1>
-        <span>{{ .subtitle | markdownify }}</span>
+        <span class="profile-subtitle">{{ .subtitle | markdownify }}</span>
         {{- partial "social_icons.html" -}}
+
+        {{- with site.Params.homeSkills }}
+        <div class="profile-skills-section">
+            {{- with site.Params.homeSkillsTitle }}
+            <div class="profile-skills-title">{{ . }}</div>
+            {{- end }}
+            <div class="profile-skills-list">
+                {{- range . }}
+                <span class="profile-skill-tag">[{{ . }}]</span>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
 
         {{- with .buttons }}
         <div class="buttons">
@@ -56,3 +69,119 @@
     </div>
     {{- end}}
 </div>
+
+<style>
+.profile h1 {
+    color: #3b82f6;
+}
+
+[data-theme="dark"] .profile h1 {
+    color: #58A6FF;
+}
+
+.profile-image {
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.profile-subtitle {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons a svg {
+    stroke: #3b82f6;
+}
+
+[data-theme="dark"] .social-icons a svg {
+    stroke: #58A6FFE6;
+}
+
+.social-icons a {
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: translateY(-2px);
+}
+
+.social-icons a:hover svg {
+    opacity: 0.7;
+}
+
+.social-icons a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--theme);
+    color: var(--primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    border: 1px solid var(--border);
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+}
+
+.profile-skills-section {
+    margin-top: 1.75rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--entry);
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-skills-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--content);
+    letter-spacing: 0.5px;
+}
+
+.profile-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.profile-skill-tag {
+    display: inline-block;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    font-family: monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--content);
+    transition: all 0.2s ease;
+}
+
+.profile-skill-tag:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+</style>
