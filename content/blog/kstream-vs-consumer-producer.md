@@ -9,7 +9,7 @@ When I first looked at the requirement for one of our Kafka pipelines, using KSt
 
 The requirement itself was simple: consume a message from one Kafka topic, validate and process it, and publish the result to another Kafka topic.
 
-The part that made it less simple was the infrastructure. The source topic and destination topic were on two completely separate Kafka clusters. They also had different security configurations.
+The part that made it less simple was the infrastructure. The source and destination topics were on two completely separate Kafka clusters. Those clusters also had different security configurations.
 
 That difference ended up changing the architecture.
 
@@ -50,7 +50,7 @@ Once the source and destination were on different clusters with their different 
 
 That gave us a much stronger signal that this wasn't simply a bad topic configuration or a temporary connectivity problem.
 
-We went back through the Kafka Streams configuration model and some previous implementations/documentation. The issue was that the conventional Streams setup was not a good fit for what we were trying to do: independently connect the consumer side to one Kafka cluster and the producer side to another cluster with separate infrastructure and security configuration.
+We went back through the Kafka Streams configuration model and some previous implementations/documentation. The issue was that the conventional Streams setup was not a good fit for what we were trying to do: independently connect the consumer side to one Kafka cluster and the producer side to another cluster with separate infrastructure and security configurations.
 
 At that point, continuing to fight the configuration didn't make much sense.
 
@@ -164,9 +164,9 @@ The producer was responsible for publishing the transformed `GenericRecord` to t
 
 That separation made debugging much easier too.
 
-If the consumer had a problem, I could look at the Cluster A configuration.
+If the consumer had a problem, we could look at the Cluster A configuration.
 
-If the producer had a problem, I could look at the Cluster B configuration.
+If the producer had a problem, we could look at the Cluster B configuration.
 
 There was less ambiguity about which client was responsible for which connection.
 
@@ -292,7 +292,7 @@ If the consumer and producer are working against the same Kafka cluster and the 
 
 The decision changes when the infrastructure changes.
 
-If the source and destination are in different Kafka clusters and need independent connection and security configurations, I would choose a separate Consumer + Producer approach. In our case, that meant using `@KafkaListener` for the source and `KafkaTemplate` for the destination.
+If the source and destination are in different Kafka clusters and need independent connection and security configurations, I would choose a separate consumer + producer approach. In our case, that meant using `@KafkaListener` for the source and `KafkaTemplate` for the destination.
 
 The lesson for me was fairly simple: **don't choose the abstraction before checking the infrastructure boundary.**
 
