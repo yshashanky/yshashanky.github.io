@@ -1,5 +1,5 @@
 ---
-title: "From XML to Avro: Building SpecificRecord and Publishing GenericRecord with Kafka"
+title: "From XML to Avro: Building SpecificRecord and Publishing a GenericRecord with Kafka"
 date: 2026-09-15
 description: "A practical look at converting XML payloads to Avro SpecificRecord and GenericRecord in Java, using StAX, Schema Registry, and Kafka for the final publish flow."
 draft: false
@@ -27,7 +27,7 @@ Kafka
 
 There are a few different technologies involved here—XML, StAX, Avro, GenericRecord, SpecificRecord, and Schema Registry. Individually, none of them is particularly difficult. The interesting part is how they fit together.
 
-This article walks through that flow, with the main focus on **how to take an XML payload and build an Avro SpecificRecord from it**.
+This article walks through that flow, focusing mainly on **how to take an XML payload and build an Avro SpecificRecord from it**.
 
 ---
 
